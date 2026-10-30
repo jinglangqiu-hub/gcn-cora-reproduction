@@ -1,0 +1,30 @@
+{
+  "freeze_id": "cora_official_last_20261029_163956",
+  "protocol": "official_code_last",
+  "models": {
+    "gcn": {
+      "n": 10,
+      "test_mean": 0.8140000000000001,
+      "test_sample_std_ddof1": 0.006394442031083584,
+      "test_min": 0.804,
+      "test_max": 0.825
+    },
+    "mlp": {
+      "n": 10,
+      "test_mean": 0.5243,
+      "test_sample_std_ddof1": 0.10885979770124304,
+      "test_min": 0.216,
+      "test_max": 0.573
+    }
+  },
+  "paired_difference": {
+    "n": 10,
+    "mean_gcn_minus_mlp": 0.28969999999999996,
+    "sample_std_ddof1": 0.1052246802481877
+  },
+  "std_ddof": 1,
+  "test_evaluation": true,
+  "all_20_predeclared_runs_included": true,
+  "selection_changed": false,
+  "training_performed": false
+}

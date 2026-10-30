@@ -1,0 +1,13 @@
+__pycache__/
+*.py[cod]
+.venv/
+.cache/
+_matplotlib_cache/
+runs/
+evaluations/
+data/raw/
+data/processed/
+artifacts/downloads/
+artifacts/plots/
+*.pt
+*.zip

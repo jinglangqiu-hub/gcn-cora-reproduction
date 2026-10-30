@@ -1,0 +1,43 @@
+{
+  "protocol": "official_code_last",
+  "device": "cpu",
+  "cpu_threads": 4,
+  "deterministic_algorithms": true,
+  "in_features": 1433,
+  "hidden_features": 16,
+  "out_features": 7,
+  "dropout": 0.5,
+  "learning_rate": 0.01,
+  "max_epochs": 200,
+  "optimizer": "Adam",
+  "adam_betas": [
+    0.9,
+    0.999
+  ],
+  "adam_eps": 1e-08,
+  "adam_amsgrad": false,
+  "adam_foreach": false,
+  "optimizer_weight_decay": 0,
+  "first_layer_l2_coefficient": 0.0005,
+  "early_stopping_window": 10,
+  "early_stopping_metric": "validation mean CE + current first-layer L2",
+  "selection": "last model at stopping epoch; best_val is diagnostic only",
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+  ],
+  "split": {
+    "train": 140,
+    "validation": 500,
+    "test": 1000,
+    "other": 1068
+  }
+}

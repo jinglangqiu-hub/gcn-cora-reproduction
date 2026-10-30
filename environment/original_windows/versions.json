@@ -1,0 +1,12 @@
+{
+  "historical_environment_only": true,
+  "python": "3.11.18",
+  "torch": "2.9.1+cu128",
+  "numpy": "1.26.4",
+  "scipy": "1.13.1",
+  "matplotlib": "3.9.2",
+  "networkx": "3.3",
+  "training_device": "cpu",
+  "threads": 4,
+  "reference_commit": "39a4089fe72ad9f055ed6fdb9746abdcfebc4d81"
+}

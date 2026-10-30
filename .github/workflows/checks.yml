@@ -1,0 +1,20 @@
+name: Reproduction checks
+on: [push, pull_request, workflow_dispatch]
+permissions:
+  contents: read
+jobs:
+  cpu-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: python -m pip install torch==2.9.1 --index-url https://download.pytorch.org/whl/cpu
+      - run: python -m pip install -r requirements.txt
+      - run: python -m tools.summarize
+      - run: node checks/verify_viewer.cjs
+      - run: python -m checks.verify_models
+      - run: python -m tools.prepare_data
+      - run: python -m tools.train --model gcn --epochs 3 --run-dir runs/ci_gcn
+      - run: python -m tools.evaluate --run-dir runs/ci_gcn --output-dir evaluations/ci_gcn

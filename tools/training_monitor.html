@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="zh-CN">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cora 训练观察</title>
+<style>
+*{box-sizing:border-box} :root{font-family:"Segoe UI","Microsoft YaHei",sans-serif;color:#1c2b39;background:#f3f6fa;font-size:14px}
+body{margin:0}main{max-width:1320px;margin:auto;padding:30px 24px}header{display:flex;justify-content:space-between;gap:20px;align-items:center}
+h1{font-size:25px;margin:0 0 8px;font-weight:650;letter-spacing:-.6px}p{margin:8px 0;color:#627386;line-height:1.7}.eyebrow{font-size:12px;color:#6a7c91;letter-spacing:2px;margin-bottom:7px}
+.status{display:flex;align-items:center;gap:8px;white-space:nowrap;background:#fff;border:1px solid #dce4ee;border-radius:20px;padding:9px 14px}.dot{width:8px;height:8px;border-radius:50%;background:#8293a6}
+.toolbar{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin:25px 0 18px}select,button{font:inherit;border:1px solid #ced9e5;border-radius:8px;background:#fff;padding:9px 12px;color:inherit;min-height:39px}select{max-width:100%;min-width:240px;flex:1}button{cursor:pointer}button:hover{background:#eaf1fa}button:focus-visible,select:focus-visible,input:focus-visible{outline:3px solid #96bdf0;outline-offset:3px}
+.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.card,.chart,.inspect{background:#fff;border:1px solid #dfe6ef;border-radius:12px}.card{padding:17px 20px}.label{color:#697b8e;font-size:12px}.value{font-size:29px;font-weight:650;margin:8px 0 5px;font-variant-numeric:tabular-nums}.sub{font-size:12px;color:#718194;min-height:18px}
+.charts{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:18px}.chart{padding:18px 16px 8px;min-width:0}.chart h2{font-size:15px;font-weight:600;margin:0}.chart-head{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;padding:0 4px}.legend{display:flex;gap:13px;color:#68798b;font-size:11px}.legend span:before{content:"";display:inline-block;width:15px;height:3px;background:#2563eb;margin-right:5px;vertical-align:middle}.legend span:last-child:before{background:#db7a25}
+svg{display:block;width:100%;height:290px}svg text{font-family:"Segoe UI","Microsoft YaHei",sans-serif;font-size:11px;fill:#718195}svg .line{fill:none;stroke-width:2.3;stroke-linejoin:round;stroke-linecap:round}svg .train{stroke:#2563eb}svg .val{stroke:#db7a25;stroke-dasharray:6 3}
+.inspect{padding:14px 20px;margin-top:16px}.inspect label{font-size:12px;color:#63768b}input[type=range]{width:100%;margin:14px 0 5px;accent-color:#2563eb}.reading{display:flex;flex-wrap:wrap;gap:8px 22px;min-height:22px;font-size:12px;color:#556a80;font-variant-numeric:tabular-nums}.reading strong{color:#223b56}
+.notice{border-left:3px solid #397ad9;padding:0 12px;margin:18px 0;color:#556e89;font-size:12px;line-height:1.8}.footer{font-size:12px;color:#78899b;overflow-wrap:anywhere;line-height:1.9;margin-top:15px}.empty{font-size:12px;fill:#8293a6}.error{color:#b23c3c}
+@media(max-width:800px){main{padding:20px 14px}.charts{grid-template-columns:1fr}.cards{grid-template-columns:repeat(2,1fr)}header{align-items:flex-start}.status{font-size:12px}.value{font-size:25px}}
+</style>
+<main>
+ <header><div><div class="eyebrow" id="modelLabel">CORA · GCN / MLP</div><h1>训练观察</h1><p>看损失是否下降，观察训练集与验证集的差距。</p></div><div class="status"><i class="dot" id="dot"></i><span id="status">连接中</span></div></header>
+ <div class="toolbar"><label for="run">运行记录</label><select id="run"><option value="">自动跟随最新训练</option></select><button id="pause">暂停刷新</button><button id="refresh">立即刷新</button></div>
+ <section class="cards" aria-label="最新训练指标">
+  <div class="card"><div class="label">当前轮数</div><div class="value" id="epoch">—</div><div class="sub" id="epochsMax">等待训练开始</div></div>
+  <div class="card"><div class="label">验证准确率</div><div class="value" id="accuracy">—</div><div class="sub">500 个验证节点</div></div>
+  <div class="card"><div class="label">验证目标值</div><div class="value" id="loss">—</div><div class="sub">交叉熵均值 + 第一层 L2</div></div>
+  <div class="card"><div class="label">运行用时</div><div class="value" id="elapsed">—</div><div class="sub" id="timing">等待逐轮指标</div></div>
+ </section>
+ <section class="charts">
+  <div class="chart"><div class="chart-head"><h2>损失目标</h2><div class="legend"><span>训练</span><span>验证</span></div></div><svg id="lossChart" role="img" aria-label="训练和验证的损失目标，横轴为轮数"></svg></div>
+  <div class="chart"><div class="chart-head"><h2>准确率</h2><div class="legend"><span>训练</span><span>验证</span></div></div><svg id="accuracyChart" role="img" aria-label="训练和验证的准确率，横轴为轮数"></svg></div>
+ </section>
+ <section class="inspect"><label for="position" id="positionLabel">查看某一轮 · 拖动滑块或在曲线上移动鼠标</label><input id="position" type="range" min="0" max="0" value="0" disabled><div class="reading" id="reading">开始完整训练后，曲线会自动出现。</div></section>
+ <div class="notice" id="notice">每秒刷新。两条曲线均使用参数更新后、关闭 dropout 的指标。准确率来自验证集；最终使用的权重遵循 official_code_last 协议。</div>
+ <div class="footer" id="details">正在读取本地运行记录……</div>
+</main>
+<script>
+const $=id=>document.getElementById(id);let state=null,paused=false,busy=false,selectedIndex=null;
+const pct=n=>(n*100).toFixed(2)+'%',num=n=>Number(n).toFixed(4);
+function setText(id,value){$(id).textContent=value}
+function inspect(index){if(!state?.rows.length)return;selectedIndex=Math.max(0,Math.min(state.rows.length-1,index));$('position').value=selectedIndex;const r=state.rows[selectedIndex];$('reading').replaceChildren();
+ for(const text of [`第 ${r.epoch} 轮`,`训练目标 ${num(r.eval_train_objective)}`,`验证目标 ${num(r.val_objective)}`,`训练准确率 ${pct(r.eval_train_accuracy)}`,`验证准确率 ${pct(r.val_accuracy)}`]){const span=document.createElement('span');span.textContent=text;$('reading').append(span)}
+ for(const svg of [$('lossChart'),$('accuracyChart')]){const cursor=svg.querySelector('.cursor');if(cursor){const x=svg._scale(r.epoch);cursor.setAttribute('x1',x);cursor.setAttribute('x2',x)}}
+}
+function chart(id,keys,accuracy){const svg=$(id),rows=state?.rows||[],w=Math.max(280,svg.clientWidth),h=290,l=49,t=22,right=17,b=37,pw=w-l-right,ph=h-t-b;svg.setAttribute('viewBox',`0 0 ${w} ${h}`);const maxEpoch=rows.length?Math.max(2,rows.at(-1).epoch):5;
+ const top=accuracy?1:Math.max(.1,Math.ceil(Math.max(0,...rows.flatMap(r=>keys.map(k=>r[k])))*11)/10),x=e=>l+(e-1)/(maxEpoch-1)*pw,y=v=>t+ph-(v/top)*ph;svg._scale=x;let html='';
+ for(let i=0;i<=5;i++){const v=top*i/5,yy=y(v);html+=`<line x1="${l}" y1="${yy}" x2="${w-right}" y2="${yy}" stroke="#e8eef5"/><text x="${l-9}" y="${yy+4}" text-anchor="end">${accuracy?Math.round(v*100)+'%':v.toFixed(2)}</text>`}
+ const ticks=[...new Set(Array.from({length:5},(_,i)=>Math.round(1+(maxEpoch-1)*i/4)))];for(const e of ticks)html+=`<text x="${x(e)}" y="${h-17}" text-anchor="middle">${e}</text>`;html+=`<text x="${w-right}" y="${h-1}" text-anchor="end">轮数</text>`;
+ if(!rows.length)html+=`<text x="${l+pw/2}" y="${t+ph/2}" text-anchor="middle" class="empty">等待完整训练的逐轮数据</text>`;
+ keys.forEach((key,k)=>{html+=`<path class="line ${k?'val':'train'}" d="${rows.map((r,i)=>`${i?'L':'M'}${x(r.epoch)},${y(r[key])}`).join(' ')}"/>`;if(rows.length===1)html+=`<circle cx="${x(rows[0].epoch)}" cy="${y(rows[0][key])}" r="3" fill="${k?'#db7a25':'#2563eb'}"/>`});
+ html+=`<line class="cursor" x1="${l}" x2="${l}" y1="${t}" y2="${t+ph}" stroke="#aebccc" stroke-dasharray="3 4" opacity="${rows.length?1:0}"/>`;svg.innerHTML=html;
+ svg.onpointermove=event=>{if(!rows.length)return;const rect=svg.getBoundingClientRect(),epoch=1+Math.max(0,Math.min(1,(event.clientX-rect.left-l)/pw))*(maxEpoch-1);let index=0;for(let i=1;i<rows.length;i++)if(Math.abs(rows[i].epoch-epoch)<Math.abs(rows[index].epoch-epoch))index=i;inspect(index)};
+}
+function draw(){chart('lossChart',['eval_train_objective','val_objective'],false);chart('accuracyChart',['eval_train_accuracy','val_accuracy'],true);if(state?.rows.length)inspect(selectedIndex??state.rows.length-1)}
+function render(data){const previous=state,follow=selectedIndex===null||!previous?.rows.length||selectedIndex===previous.rows.length-1||previous.run!==data.run;state=data;const select=$('run'),wanted=select.value;
+ if(JSON.stringify(data.runs)!==JSON.stringify(Array.from(select.options).slice(1).map(o=>o.value))){select.replaceChildren(new Option('自动跟随最新训练',''),...data.runs.map(name=>new Option(name,name)));if(data.runs.includes(wanted))select.value=wanted}
+ const rows=data.rows,r=rows.at(-1),config=data.config,result=data.result,status=data.status.status;
+ const modelName=data.run?(config.model??'gcn').toUpperCase():'GCN / MLP';setText('modelLabel','CORA · TWO-LAYER '+modelName);document.title=modelName+' 训练观察';
+ setText('epoch',r?r.epoch:'—');setText('epochsMax',config.max_epochs?`最多 ${config.max_epochs} 轮`:'等待训练开始');setText('accuracy',r?pct(r.val_accuracy):'—');setText('loss',r?num(r.val_objective):'—');
+ const seconds=result.elapsed_seconds??rows.reduce((sum,item)=>sum+item.epoch_seconds,0);setText('elapsed',r?seconds.toFixed(1)+' s':'—');setText('timing',result.elapsed_seconds!==undefined?'完整运行用时（含收尾）':r?'逐轮训练累计用时':'等待逐轮指标');
+ const labels={running:'训练中',completed:'已完成',failed:'运行失败',interrupted:'已中断'};setText('status',paused?'刷新已暂停':data.run?(labels[status]||'读取指标中'):'等待首次完整训练');$('dot').style.background=status==='completed'?'#1b9164':status==='failed'||status==='interrupted'?'#cc5a45':status==='running'?'#2563eb':'#8293a6';
+ const reasons={max_epochs_reached:'达到最大轮数',official_code_validation_window:'触发验证窗口早停'};let detail=data.run?`${data.run} · seed ${config.seed??'—'} · ${config.device??'cpu'} · ${config.protocol??'—'}`:'尚未发现完整训练记录。开始训练后自动显示，也可从上方选择历史运行。';
+ if(result.stop_reason)detail+=`\n停止原因：${reasons[result.stop_reason]||result.stop_reason} · 选中权重：${result.selected_checkpoint??'—'}（第 ${result.selected_epoch??'—'} 轮）`;
+ if(status==='running'&&data.age_seconds>15)detail+='\n已有超过 15 秒未写入新指标；请结合终端确认是否暂停或中断。';if(data.status.message)detail+='\n'+data.status.message;
+ $('details').style.whiteSpace='pre-line';setText('details',detail);$('position').disabled=!r;$('position').max=Math.max(0,rows.length-1);if(follow)selectedIndex=rows.length?rows.length-1:null;
+ if(!r)setText('reading','开始完整训练后，曲线会自动出现。');draw();
+}
+async function poll(force=false){if(busy||paused&&!force)return;busy=true;try{const response=await fetch('/api/state?run='+encodeURIComponent($('run').value),{cache:'no-store'});if(!response.ok)throw Error(response.status);render(await response.json())}catch(error){setText('status','连接中断，正在重试');$('dot').style.background='#cc5a45';setText('details','本地监控服务暂不可用，请确认监控进程仍在运行。已有曲线保留。')}finally{busy=false}}
+$('position').oninput=event=>inspect(Number(event.target.value));$('run').onchange=()=>{selectedIndex=null;poll(true)};$('refresh').onclick=()=>poll(true);$('pause').onclick=()=>{paused=!paused;setText('pause',paused?'恢复刷新':'暂停刷新');if(paused)setText('status','刷新已暂停');else poll(true)};
+new ResizeObserver(()=>draw()).observe(document.querySelector('.charts'));poll();setInterval(poll,1000);
+</script>
+</html>

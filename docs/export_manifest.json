@@ -1,0 +1,193 @@
+{
+  "freeze_id": "cora_official_last_20261029_163956",
+  "frozen_manifest_sha256": "802f62b87032577b05870d3393aceade9b4dbaf1d578c00f218011282d6b90ab",
+  "reference_commit": "39a4089fe72ad9f055ed6fdb9746abdcfebc4d81",
+  "runs": [
+    {
+      "model": "gcn",
+      "seed": 0,
+      "original_run_id": "formal_cora_official_last_20261029_163956_gcn_seed00",
+      "original_checkpoint_sha256": "edba06737263fb486ce4c6cdd95a20697b64cc377237b358dc1c4174737ea1ce",
+      "public_checkpoint_sha256": "6fe740373d2ccb19822826ccd6609e72e26b8caa2d13090496f795539197af88",
+      "export_change": "config.data_directory made relative; all model/optimizer/RNG tensors preserved",
+      "prediction_sha256": "9e9ee863a95dbc099338d9981851f2a15278fc848c8d4ceae02d20f69157f4cd"
+    },
+    {
+      "model": "mlp",
+      "seed": 0,
+      "original_run_id": "formal_cora_official_last_20261029_163956_mlp_seed00",
+      "original_checkpoint_sha256": "cfc062375d3f952b6a042317329e3e10d4307bccf66b65604f0b5abd5b313eb0",
+      "public_checkpoint_sha256": "032177301f414a1067886c21f9e8438758edcca11a377964c5c2375d74bb40b8",
+      "export_change": "config.data_directory made relative; all model/optimizer/RNG tensors preserved",
+      "prediction_sha256": "5e8f78e44e1dadabea277a48b24bbe96f22e36973bbec6f51cec3bcf9c1e6e0a"
+    },
+    {
+      "model": "gcn",
+      "seed": 1,
+      "original_run_id": "formal_cora_official_last_20261029_163956_gcn_seed01",
+      "original_checkpoint_sha256": "c0b7447ffcaacaafa287fa6c384c97cb431eb0f01ff809cd380fa51fb464c08c",
+      "public_checkpoint_sha256": "ac96f3b72d3dfe8fe8753888d3d368b8a31558a21f9308d8df6c4140b6ecfbc2",
+      "export_change": "config.data_directory made relative; all model/optimizer/RNG tensors preserved",
+      "prediction_sha256": "1da93def5c1d887f3ef0a9669e73ea14a25442d886eec9ca92f5bc7f1edd7b8d"
+    },
+    {
+      "model": "mlp",
+      "seed": 1,
+      "original_run_id": "formal_cora_official_last_20261029_163956_mlp_seed01",
+      "original_checkpoint_sha256": "074a4aa4881064290ae301133b44a94d7a60b23bed2b5f8617d42b7b4654b336",
+      "public_checkpoint_sha256": "ace784dcfbc19165d25eae57eab410763d1638194d222b959341b29a45170680",
+      "export_change": "config.data_directory made relative; all model/optimizer/RNG tensors preserved",
+      "prediction_sha256": "82fec713b27270bbca6a3789640b7fe21d2f9af417e82167b844a29b32ce1f47"
+    },
+    {
+      "model": "gcn",
+      "seed": 2,
+      "original_run_id": "formal_cora_official_last_20261029_163956_gcn_seed02",
+      "original_checkpoint_sha256": "0338c73859b04e7bd08c3cfcd9a8f92654ce7e1a8dc9e6fd6fd0075fce2e1b69",
+      "public_checkpoint_sha256": "ba507657a6581e41c914e86a49950f085aae28f2a1885c7a8119c54958d8d509",
+      "export_change": "config.data_directory made relative; all model/optimizer/RNG tensors preserved",
+      "prediction_sha256": "e718f129b312fd3b04ee69e3b4763eec3216fa265bde5ce5e2fddb806a990ba6"
+    },
+    {
+      "model": "mlp",
+      "seed": 2,
+      "original_run_id": "formal_cora_official_last_20261029_163956_mlp_seed02",
+      "original_checkpoint_sha256": "a134e4d2cc3d29e5d9ab36f181751b87dad373e172aa686130e5099004bce204",
+      "public_checkpoint_sha256": "c5fbd7b57adff36fc71e305de6227385dafcd05bd59d7795585714594018a02c",
+      "export_change": "config.data_directory made relative; all model/optimizer/RNG tensors preserved",
+      "prediction_sha256": "159a67ef3349eeb8f021dcaf5ff121a4ceee68cf07dd1a78e9d6a0b710e82b30"
+    },
+    {
+      "model": "gcn",
+      "seed": 3,
+      "original_run_id": "formal_cora_official_last_20261029_163956_gcn_seed03",
+      "original_checkpoint_sha256": "2d3248ed1b27e31aefa28fb1bdc6f2489814205b5fb23c7090b2e49b51c5daab",
+      "public_checkpoint_sha256": "7944939913c722c081e84e33ded73a4631aab265e2410764bb11d3b32fdd28d7",
+      "export_change": "config.data_directory made relative; all model/optimizer/RNG tensors preserved",
+      "prediction_sha256": "f256cd59eb80c23295a08df8ef909b9c4706262f0dc7cdd8c3e03fba4845bec0"
+    },
+    {
+      "model": "mlp",
+      "seed": 3,
+      "original_run_id": "formal_cora_official_last_20261029_163956_mlp_seed03",
+      "original_checkpoint_sha256": "10db0ef2964d8c21e63d5b549ad6be26e84b11b6c8bf9b95fedf4dc38fc84918",
+      "public_checkpoint_sha256": "4d6f75e15cd6ec3aeff7e59b29f32dbd4b74a506d43ba6f3e39a9ff9987e324a",
+      "export_change": "config.data_directory made relative; all model/optimizer/RNG tensors preserved",
+      "prediction_sha256": "e04ff36541c636925b33714affaa6454046536058ea5a93bbf8c9083c6c89b62"
+    },
+    {
+      "model": "gcn",
+      "seed": 4,
+      "original_run_id": "formal_cora_official_last_20261029_163956_gcn_seed04",
+      "original_checkpoint_sha256": "3a444e0b602611b58997ef85b65d8e593caff38ed9dcc7c0b05ccc3c8397ff6c",
+      "public_checkpoint_sha256": "c3e24cc60b75282ebc082cf554b159e7a232f99f4d8e51bd3c7de82a8566e204",
+      "export_change": "config.data_directory made relative; all model/optimizer/RNG tensors preserved",
+      "prediction_sha256": "1c234fae1c13d3a962d0cd0e7227499699218e8262b06eb01072e4fbb16781f1"
+    },
+    {
+      "model": "mlp",
+      "seed": 4,
+      "original_run_id": "formal_cora_official_last_20261029_163956_mlp_seed04",
+      "original_checkpoint_sha256": "7fa374ba08505bd800a5d4708726ba9a6ea920c16d07431362b097c0cc16dcba",
+      "public_checkpoint_sha256": "e3f7957d4cb82484aa9c224f48c4e7d530add61738946461fb3f596457b51ccb",
+      "export_change": "config.data_directory made relative; all model/optimizer/RNG tensors preserved",
+      "prediction_sha256": "b6677ec5daf7321aca99216c9923a1dc40a1ea156ecae612e16e9b74eeaddfdb"
+    },
+    {
+      "model": "gcn",
+      "seed": 5,
+      "original_run_id": "formal_cora_official_last_20261029_163956_gcn_seed05",
+      "original_checkpoint_sha256": "ac0ff928a06b49e270d364a845b506a25e5c8838777c20cbb34d8d0892e10c7d",
+      "public_checkpoint_sha256": "4353bc6011b531658fb12314631d83212b9976bde03adb62894a8ff469daf050",
+      "export_change": "config.data_directory made relative; all model/optimizer/RNG tensors preserved",
+      "prediction_sha256": "7e76413a66ed9554dceedfa3d3d3cc109d2e881ec338911fc0bfc61b79441990"
+    },
+    {
+      "model": "mlp",
+      "seed": 5,
+      "original_run_id": "formal_cora_official_last_20261029_163956_mlp_seed05",
+      "original_checkpoint_sha256": "dc43ed4f15e01058a71dbb508d339cded5b30cac7e4c7a2ef59037518f6abbf9",
+      "public_checkpoint_sha256": "4c663fb8aeacc7b5c30596c1e2b9b7faf0dd00d8a997ec1255dbff167ed5028a",
+      "export_change": "config.data_directory made relative; all model/optimizer/RNG tensors preserved",
+      "prediction_sha256": "87dc7ab21f55609270288378917a71c3ea7ebe52983163627b7c25bda8e3776a"
+    },
+    {
+      "model": "gcn",
+      "seed": 6,
+      "original_run_id": "formal_cora_official_last_20261029_163956_gcn_seed06",
+      "original_checkpoint_sha256": "3394b095146208f68779172f03ad0ed01e9de96b3e83a5e740f5a549ae566f1a",
+      "public_checkpoint_sha256": "1442d4ca201df3834e38176a1ffe3f0a43b29781cb74bf9aed331cbd989973f0",
+      "export_change": "config.data_directory made relative; all model/optimizer/RNG tensors preserved",
+      "prediction_sha256": "1127809c0b83f79d3118779d188f2ba20c27f9cb82b6280224b2e4793f19c15f"
+    },
+    {
+      "model": "mlp",
+      "seed": 6,
+      "original_run_id": "formal_cora_official_last_20261029_163956_mlp_seed06",
+      "original_checkpoint_sha256": "e4f61c4d9226a07d79707c947556d7761fd1a3886d4518b5b1d7ac48a332a3b4",
+      "public_checkpoint_sha256": "bc3fe4ab2f6ddcbf65368a0341f2d7331cea494ac0872eb2e3fcbf7ee30cb88b",
+      "export_change": "config.data_directory made relative; all model/optimizer/RNG tensors preserved",
+      "prediction_sha256": "53ae37f8c58a1ce6729c7f5dbb5f9dc762de8eb19aca85fae787a3242e547098"
+    },
+    {
+      "model": "gcn",
+      "seed": 7,
+      "original_run_id": "formal_cora_official_last_20261029_163956_gcn_seed07",
+      "original_checkpoint_sha256": "83431571c910838630a6f8901f0d11b3438d3037f9b47e5d2ea690b068a1afab",
+      "public_checkpoint_sha256": "f1a658c7cd1796247bfd7d996c7317f35469995893bbb32746d4274691034ff6",
+      "export_change": "config.data_directory made relative; all model/optimizer/RNG tensors preserved",
+      "prediction_sha256": "733138e34aaf76c6c9d54457cc352f4d1519ca54a8da4b432af02c8725c8632d"
+    },
+    {
+      "model": "mlp",
+      "seed": 7,
+      "original_run_id": "formal_cora_official_last_20261029_163956_mlp_seed07",
+      "original_checkpoint_sha256": "49048a9f5af0fd17ebcafac754045c4e77174e09c5d1c619a8e4da8bce34f4ff",
+      "public_checkpoint_sha256": "b2db8cf8e2bdee5432eeb439f7b28211ec262e7cd99841fc0c2f1a38c56e1193",
+      "export_change": "config.data_directory made relative; all model/optimizer/RNG tensors preserved",
+      "prediction_sha256": "6313c05e7e679ce71399af08b92319149c2c5523f57120d33aea19923f5340d9"
+    },
+    {
+      "model": "gcn",
+      "seed": 8,
+      "original_run_id": "formal_cora_official_last_20261029_163956_gcn_seed08",
+      "original_checkpoint_sha256": "6b66cc474321480c3b409838fffdb5a5bf7ab8a1938b299f1d67fa31e15d8333",
+      "public_checkpoint_sha256": "3f2b44cdcd8da795d7919380ed595d0c4ccb8c94ea9f5af33a857a8b33a4c9c2",
+      "export_change": "config.data_directory made relative; all model/optimizer/RNG tensors preserved",
+      "prediction_sha256": "528abf80de73abc5b81476603eb96e607b42010ccc5c8a2299c073f553a67fd8"
+    },
+    {
+      "model": "mlp",
+      "seed": 8,
+      "original_run_id": "formal_cora_official_last_20261029_163956_mlp_seed08",
+      "original_checkpoint_sha256": "91ae81d3da64c412fd42111080e0dd3293e8646d1ae1236661cee305a4f8477e",
+      "public_checkpoint_sha256": "12b8644304932d5fb503dea93ac4cae9d885cbc55d752fe7a95d803ba698bc28",
+      "export_change": "config.data_directory made relative; all model/optimizer/RNG tensors preserved",
+      "prediction_sha256": "ce4c22ec4fe9a97f52464e81a9575a05e7bc131d95372068cdba0942827d408b"
+    },
+    {
+      "model": "gcn",
+      "seed": 9,
+      "original_run_id": "formal_cora_official_last_20261029_163956_gcn_seed09",
+      "original_checkpoint_sha256": "dbd826ced40e5d5eccf16b5f25fa5467426a596b864d3cf087d2431b11ed7f7a",
+      "public_checkpoint_sha256": "c30e5f70172b975cc704d30b568ef351712778028e50510858bedddbd329c20b",
+      "export_change": "config.data_directory made relative; all model/optimizer/RNG tensors preserved",
+      "prediction_sha256": "6a6e5b73e341b5d5b088696d15955ca8a4666f25e392a16bca051e87b9b039b7"
+    },
+    {
+      "model": "mlp",
+      "seed": 9,
+      "original_run_id": "formal_cora_official_last_20261029_163956_mlp_seed09",
+      "original_checkpoint_sha256": "1ca2ab855498abc1f9b058ddba4cf598238c883dde0ab3f54158843b8c639efe",
+      "public_checkpoint_sha256": "4389800ccd259c18c33d7f5318f57859735f3fa47c4ce13973913b674312a41b",
+      "export_change": "config.data_directory made relative; all model/optimizer/RNG tensors preserved",
+      "prediction_sha256": "555c8195af1392b3ab49bff35236fac77a1a8bb781b088ee6d34372a799474ef"
+    }
+  ],
+  "original_model_sources": {
+    "gcn_layer.py": "ad17669fbcec457481346cfc64976e0a44268464463ebf5ae8ce6519e5171568",
+    "gcn_model.py": "c8e8bb490dd848afb65d2c6a2d7ced8c52eed9931e8918c61258f4f66e17df42",
+    "mlp_model.py": "dc67b27c80b2d5a8e1842d57f0211f533af9a34bb40a793b5ee7edf962c2cbf2",
+    "cora_data.py": "450e2b241a545d92e2f308df0921df99bbb51846b82198ecde9e37ed691057e8"
+  }
+}

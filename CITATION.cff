@@ -1,0 +1,9 @@
+cff-version: 1.2.0
+message: "Please cite the original GCN paper; this file identifies this reproduction project."
+title: "GCN Cora Reproduction with MLP Control"
+authors:
+  - name: "JinglangQiu"
+version: 0.1.0
+date-released: 2026-10-30
+url: "https://github.com/jinglangqiu-hub/gcn-cora-reproduction"
+license: MIT
