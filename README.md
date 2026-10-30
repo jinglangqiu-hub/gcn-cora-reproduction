@@ -1,6 +1,6 @@
 # GCN Cora Reproduction
 
-**两层 GCN 的 Cora 核心复现：手写 PyTorch + 同参数量 MLP 对照 + 固定划分 10 seeds。**
+**两层 GCN 的 Cora 核心复现：PyTorch + 同参数量 MLP 对照 + 固定划分 10 seeds。**
 
 Core reproduction of Kipf & Welling (ICLR 2017) on the fixed public Cora split. This is an independent learning/reproduction project, not the authors' official code or a full reproduction of every paper experiment.
 
