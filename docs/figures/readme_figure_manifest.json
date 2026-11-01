@@ -1,0 +1,38 @@
+{
+  "purpose": "English README figures; no new training or test evaluation",
+  "inputs_sha256": {
+    "results/test_runs.csv": "26bf75bb8e5949b449532947f6dfe7f9d72131191c65ea9f6609138cf0f56358",
+    "results/test_summary.json": "a7396f0253e80b860fc2546443fbc31cfb1266f98fd0149021813d87be020a10",
+    "src/gcn_model.py": "c8e8bb490dd848afb65d2c6a2d7ced8c52eed9931e8918c61258f4f66e17df42",
+    "src/gcn_layer.py": "ad17669fbcec457481346cfc64976e0a44268464463ebf5ae8ce6519e5171568",
+    "src/mlp_model.py": "dc67b27c80b2d5a8e1842d57f0211f533af9a34bb40a793b5ee7edf962c2cbf2",
+    "configs/cora_official_last.json": "69f998c04eb57c2b55b67c32868d9176610dce0bfa8c532a0bbad0cab09f2245",
+    "tools/plot_readme_figures.py": "6c1ad7d6118052e9f9c2d26ec98aff66a63f20a919fc08cc8684507427fdfe45"
+  },
+  "outputs_sha256": {
+    "readme_gcn_architecture.svg": "500c593a0d2f25f7e4f9dd8b2ee2b6f8e84d4beaa37e63a51fe92d9483d5ad59",
+    "readme_gcn_architecture.png": "30d0f66bedce915be068c2029b8c5326f5ec1504eb55286975616f6f82eb08b0",
+    "readme_gcn_vs_mlp.svg": "76282b284f99c3077860fbef01a30fd5ba53053b36003cdca5ab4689e35025c1",
+    "readme_gcn_vs_mlp.png": "7bd2a1caffdab5699ab85d42eca2452361367b0dfd38a11b9ff8e1bafbfa3dd4"
+  },
+  "statistics": {
+    "gcn": {
+      "n": 10,
+      "mean_percent": 81.39999999999999,
+      "sample_std_pp": 0.6394442031083584
+    },
+    "mlp": {
+      "n": 10,
+      "mean_percent": 52.43,
+      "sample_std_pp": 10.885979770124303
+    },
+    "paired_mean_difference_pp": 28.969999999999995
+  },
+  "all_20_predeclared_runs_included": true,
+  "error_bars": "sample standard deviation, ddof=1; not confidence intervals",
+  "architecture": "GCN.forward; dropout before each graph convolution; eval returns logits",
+  "renderer": {
+    "matplotlib": "3.9.2",
+    "font": "DejaVu Sans"
+  }
+}
