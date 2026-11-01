@@ -77,6 +77,9 @@ def main():
                 path = out / f'{name}.{extension}'
                 metadata = {'Date': None} if extension == 'svg' else {}
                 fig.savefig(path, dpi=180, metadata=metadata)
+                if extension == 'svg':
+                    path.write_bytes(b'\n'.join(line.rstrip() for line in
+                                               path.read_bytes().splitlines()) + b'\n')
                 outputs[path.name] = sha256(path)
             plt.close(fig)
 
@@ -164,7 +167,7 @@ def main():
         'renderer': {'matplotlib': matplotlib.__version__, 'font': 'DejaVu Sans'},
     }
     (out/'readme_figure_manifest.json').write_text(
-        json.dumps(manifest, indent=2) + '\n', encoding='utf-8')
+        json.dumps(manifest, indent=2) + '\n', encoding='utf-8', newline='\n')
     print('Verified 20 source rows and summaries; exported 2 SVG + 2 PNG figures and manifest.')
 
 

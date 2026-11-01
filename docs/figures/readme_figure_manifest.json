@@ -7,12 +7,12 @@
     "src/gcn_layer.py": "ad17669fbcec457481346cfc64976e0a44268464463ebf5ae8ce6519e5171568",
     "src/mlp_model.py": "dc67b27c80b2d5a8e1842d57f0211f533af9a34bb40a793b5ee7edf962c2cbf2",
     "configs/cora_official_last.json": "69f998c04eb57c2b55b67c32868d9176610dce0bfa8c532a0bbad0cab09f2245",
-    "tools/plot_readme_figures.py": "6c1ad7d6118052e9f9c2d26ec98aff66a63f20a919fc08cc8684507427fdfe45"
+    "tools/plot_readme_figures.py": "1cc1dd0c3ccc2f31fe17b2cbfda4cf22ae7b7b7113f33df041471a65d4ca4636"
   },
   "outputs_sha256": {
-    "readme_gcn_architecture.svg": "500c593a0d2f25f7e4f9dd8b2ee2b6f8e84d4beaa37e63a51fe92d9483d5ad59",
+    "readme_gcn_architecture.svg": "adbe2d561740b8f0b993ead4a147e9aa32905c043bd95ae1ba224c5d1aac27cb",
     "readme_gcn_architecture.png": "30d0f66bedce915be068c2029b8c5326f5ec1504eb55286975616f6f82eb08b0",
-    "readme_gcn_vs_mlp.svg": "76282b284f99c3077860fbef01a30fd5ba53053b36003cdca5ab4689e35025c1",
+    "readme_gcn_vs_mlp.svg": "d961be312aa485352f3a83441ba30d42b69bf2912d74e1dd75fd9cafd136dae7",
     "readme_gcn_vs_mlp.png": "7bd2a1caffdab5699ab85d42eca2452361367b0dfd38a11b9ff8e1bafbfa3dd4"
   },
   "statistics": {
