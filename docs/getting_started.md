@@ -61,6 +61,14 @@ python -m tools.plot_readme_figures --output-dir artifacts/readme_figures
 
 The output includes PNG/SVG pairs and a manifest of source, script, and image hashes. The committed versions are in `docs/figures/`.
 
+To recreate the five figures in the [English report](report_en.md):
+
+```bash
+python -m tools.plot_report_en --output-dir artifacts/plots/report_en
+```
+
+These use the same historical CSVs as the Chinese report. The committed English PNG/SVG pairs and their source hashes are in `docs/figures/en/`; the [Chinese report](report.md) and its original figures remain available.
+
 ## Repository map
 
 | Directory | Contents |

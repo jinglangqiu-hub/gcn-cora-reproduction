@@ -26,16 +26,16 @@ Cora: **2,708 nodes · 7 classes · 140 / 500 / 1,000 train / validation / test 
 **Graph propagation helps in this setting:** GCN exceeds MLP by **28.97 percentage points on average**, with a positive difference in all 10 seed pairs. GCN also varies less across these runs. Its 81.40% mean is close to the paper's 81.5% Cora reference, though this is a smaller, different implementation study.
 
 - **One dataset, one split, 10 seeds.** These results measure training randomness on a fixed Cora split; they do not establish performance across datasets or splits. The paper's fixed-split references average 100 initializations.
-- **The early-stopping rule matters.** MLP seed=0 stops after 22 epochs at 21.6% test accuracy and remains in every summary. The frozen rule uses validation CE + L2 and selects the final model. This comparison therefore measures graph propagation under that specific training protocol. [Early-stop analysis](docs/report.md)
+- **The early-stopping rule matters.** MLP seed=0 stops after 22 epochs at 21.6% test accuracy and remains in every summary. The frozen rule uses validation CE + L2 and selects the final model. This comparison therefore measures graph propagation under that specific training protocol. [Early-stop analysis](docs/report_en.md#5-why-mlp-seed0-stops-after-22-epochs)
 - **Implementation and scope differ.** PyTorch/dropout random streams differ from the original TensorFlow implementation. The loaded graph has 5,278 undirected edges versus 5,429 in the paper's table; this discrepancy remains unresolved. No additional datasets, ablations, or GPU speed reproduction are included. [Full scope and differences](docs/protocol.md)
 
 ## Explore and reproduce
 
-The homepage is in English; the full report and some supporting figures are in Chinese.
+The full report is available in English and Chinese, with figures in both languages.
 
 | Start here | What you will find |
 | --- | --- |
-| [Full report](docs/report.md) | Methods, results, training curves, and interpretation |
+| [Full report (English)](docs/report_en.md) · [中文报告](docs/report.md) | Methods, results, training curves, and interpretation |
 | [Training viewer](https://jinglangqiu-hub.github.io/gcn-cora-reproduction/) | Interactive history for all 20 completed runs; static data, no browser training |
 | [Getting started](docs/getting_started.md) | CPU setup, training, evaluation, local live monitoring, and plotting commands |
 | [Protocol](docs/protocol.md) · [Reproducibility](docs/reproducibility.md) | Frozen settings, checkpoint selection, and the same-machine seed=0 rerun |

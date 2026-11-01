@@ -1,0 +1,84 @@
+{
+  "edition": "English report v1.1",
+  "inputs_sha256": {
+    "results/test_runs.csv": "26bf75bb8e5949b449532947f6dfe7f9d72131191c65ea9f6609138cf0f56358",
+    "results/test_summary.json": "a7396f0253e80b860fc2546443fbc31cfb1266f98fd0149021813d87be020a10",
+    "results/paired_differences.csv": "ddb79d521813293e0081cd9ea9c4af06ed66e567e7e325db9d606f3254888c06",
+    "results/metrics/gcn_seed00.csv": "ce958f599d9e2d1ef8d011baf4e03cd4439a72974858fb2ea346a37564253976",
+    "results/metrics/mlp_seed00.csv": "bc5cb87c0545a8bee9bf61654d15c7bdd2b9128f485b35e9d3fc7b23b9a4aef2",
+    "tools/plot_report_en.py": "1f37276e7663e9c75fa4aed4144f734de4b4f19e3f5d3eeb42b59b1d9440fb09",
+    "tools/plot_readme_figures.py": "1cc1dd0c3ccc2f31fe17b2cbfda4cf22ae7b7b7113f33df041471a65d4ca4636"
+  },
+  "figures": [
+    {
+      "figure": "01_test_accuracy",
+      "sources": [
+        "results/test_runs.csv",
+        "arXiv:1609.02907v4, p7, Tables 2/3"
+      ],
+      "note": "Sample std., ddof=1; not a confidence interval. All runs retained.",
+      "outputs_sha256": {
+        "01_test_accuracy.png": "ac1efb151ff12a2e65a6a7cda500f89e338cd4a52295dbc9f0e9dfe8ba053ff6",
+        "01_test_accuracy.svg": "c757ced134f7a02b496265b11db05e175d2ed47d0b0c895f30c954b538b41e10"
+      }
+    },
+    {
+      "figure": "02_paired_seeds",
+      "sources": [
+        "results/test_runs.csv",
+        "results/paired_differences.csv"
+      ],
+      "note": "Seeds are discrete identifiers; no connecting lines. All 10 pairs included.",
+      "outputs_sha256": {
+        "02_paired_seeds.png": "00e32154dfc1b3f2f095fa7bbd8b0512493926fe67317e8bf3d5aec60ea317e0",
+        "02_paired_seeds.svg": "c1dd4afb98f8c770b165929081b4c03ba9ec0230e401a470d6f07f898b6c2d10"
+      }
+    },
+    {
+      "figure": "03_seed0_training",
+      "sources": [
+        "results/metrics/gcn_seed00.csv",
+        "results/metrics/mlp_seed00.csv"
+      ],
+      "note": "Predeclared seed=0; common 0\u2013200 epoch scale; no MLP extension or padding.",
+      "outputs_sha256": {
+        "03_seed0_training.png": "d9b327d2415490f59b1e5dcffbd21acedbed00073d1d0764b2a43e65fdd8d6ea",
+        "03_seed0_training.svg": "8635982c23f0118b228b4260afc17eae9f33f2a29ab02454a91990a5832124a4"
+      }
+    },
+    {
+      "figure": "04_mlp0_early_stop",
+      "sources": [
+        "results/metrics/mlp_seed00.csv"
+      ],
+      "note": "Independent vertical scales. Epoch 22: 1.93950760 > previous-ten mean 1.93944826.",
+      "outputs_sha256": {
+        "04_mlp0_early_stop.png": "719cd2c1fa974ba1846f8e7297b0b94946a203197bf7a8ea2fe59526b6c0973f",
+        "04_mlp0_early_stop.svg": "b528d5be33cfd1db9240f9682dfb8d52dd30b98164a3385d60ac1684531bacfd"
+      }
+    },
+    {
+      "figure": "05_stop_epochs",
+      "sources": [
+        "results/test_runs.csv"
+      ],
+      "note": "Limit 200; GCN seed=9 stops at 192; MLP seeds 0/1/3 stop at 22/194/193.",
+      "outputs_sha256": {
+        "05_stop_epochs.png": "b48113d037efe0f331cf1fa9604745894f52dc4741c85f675c55f7e45d7eaa22",
+        "05_stop_epochs.svg": "828529686bd98f9ff1eb0053701bdb36357fe1df5a1d242717c5af0bd1056968"
+      }
+    }
+  ],
+  "paper_references": {
+    "gcn": 81.5,
+    "mlp": 55.1,
+    "source": "arXiv:1609.02907v4, p7, Tables 2/3; 100 initializations"
+  },
+  "renderer": {
+    "matplotlib": "3.9.2",
+    "font": "DejaVu Sans"
+  },
+  "all_20_predeclared_runs_included": true,
+  "training_performed": false,
+  "test_predictions_recomputed": false
+}
