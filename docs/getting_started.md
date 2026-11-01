@@ -69,6 +69,15 @@ python -m tools.plot_report_en --output-dir artifacts/plots/report_en
 
 These use the same historical CSVs as the Chinese report. The committed English PNG/SVG pairs and their source hashes are in `docs/figures/en/`; the [Chinese report](report.md) and its original figures remain available.
 
+To typeset the English report as PDF:
+
+```bash
+python -m pip install -r requirements-report.txt
+python -m tools.build_report_en_pdf --output artifacts/plots/report_pdf/GCN_Cora_Report_v1.1_public_en.pdf
+```
+
+The PDF builder reads `docs/report_en.md` and its English PNG figures, embeds the bundled ReportLab Vera fonts, preserves report links, and writes a companion source/hash manifest. The published [English PDF](https://github.com/jinglangqiu-hub/gcn-cora-reproduction/releases/download/v0.1.0/GCN_Cora_Report_v1.1_public_en.pdf) and [checksum](https://github.com/jinglangqiu-hub/gcn-cora-reproduction/releases/download/v0.1.0/SHA256SUMS_en.txt) are available in Release v0.1.0.
+
 ## Repository map
 
 | Directory | Contents |

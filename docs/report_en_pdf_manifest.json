@@ -1,0 +1,20 @@
+{
+  "source": "docs/report_en.md",
+  "source_sha256": "11d99a64c3e74b1f88c2952677d2487b261c644be732a9805f11244209938346",
+  "builder": "tools/build_report_en_pdf.py",
+  "builder_sha256": "329e3a35f778dda3fb5d3b5e7a8f5467304b2afd3531ca060db7b7e2c33e1c3d",
+  "images_sha256": {
+    "figures/en/01_test_accuracy.png": "ac1efb151ff12a2e65a6a7cda500f89e338cd4a52295dbc9f0e9dfe8ba053ff6",
+    "figures/en/02_paired_seeds.png": "00e32154dfc1b3f2f095fa7bbd8b0512493926fe67317e8bf3d5aec60ea317e0",
+    "figures/en/03_seed0_training.png": "d9b327d2415490f59b1e5dcffbd21acedbed00073d1d0764b2a43e65fdd8d6ea",
+    "figures/en/05_stop_epochs.png": "b48113d037efe0f331cf1fa9604745894f52dc4741c85f675c55f7e45d7eaa22",
+    "figures/en/04_mlp0_early_stop.png": "719cd2c1fa974ba1846f8e7297b0b94946a203197bf7a8ea2fe59526b6c0973f"
+  },
+  "tables": 9,
+  "figures": 5,
+  "pdf_name": "GCN_Cora_Report_v1.1_public_en.pdf",
+  "pdf_sha256": "5c43373165b7b9026c255688599da083ca01bf72c71ecee3e467685ec28fcb67",
+  "rendering": "ReportLab; embedded Vera fonts; Unicode dashes and arrows rendered as ASCII",
+  "training_performed": false,
+  "test_predictions_recomputed": false
+}

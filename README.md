@@ -35,7 +35,7 @@ The full report is available in English and Chinese, with figures in both langua
 
 | Start here | What you will find |
 | --- | --- |
-| [Full report (English)](docs/report_en.md) · [中文报告](docs/report.md) | Methods, results, training curves, and interpretation |
+| [Full report (English)](docs/report_en.md) · [English PDF](https://github.com/jinglangqiu-hub/gcn-cora-reproduction/releases/download/v0.1.0/GCN_Cora_Report_v1.1_public_en.pdf) · [中文报告](docs/report.md) | Methods, results, training curves, and interpretation |
 | [Training viewer](https://jinglangqiu-hub.github.io/gcn-cora-reproduction/) | Interactive history for all 20 completed runs; static data, no browser training |
 | [Getting started](docs/getting_started.md) | CPU setup, training, evaluation, local live monitoring, and plotting commands |
 | [Protocol](docs/protocol.md) · [Reproducibility](docs/reproducibility.md) | Frozen settings, checkpoint selection, and the same-machine seed=0 rerun |

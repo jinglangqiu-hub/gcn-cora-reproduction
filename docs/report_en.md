@@ -4,7 +4,7 @@ Kipf & Welling · ICLR 2017 · arXiv:1609.02907v4
 
 Experiments: 2026-10-29 · Original text revised: 2026-10-30 · English edition: 2026-11-02 · Version: 1.1 (public edition)
 
-[Project overview](../README.md) · [Chinese edition](report.md) · [Setup and commands](getting_started.md)
+[Project overview](../README.md) · [Chinese edition](report.md) · [Setup and commands](getting_started.md) · [Download English PDF](https://github.com/jinglangqiu-hub/gcn-cora-reproduction/releases/download/v0.1.0/GCN_Cora_Report_v1.1_public_en.pdf)
 
 ## Abstract
 
@@ -199,7 +199,7 @@ See [Getting started](getting_started.md) for environment setup and the [publica
 
 The online viewer displays historical curves for 20 completed runs, with model/seed selection and per-epoch inspection. It does not train models in the browser. Live monitoring requires running `monitor_training` locally to read new run directories. Both interfaces distinguish training/validation metrics from final test results.
 
-This English edition translates the public Chinese report v1.1 and provides English versions of its five figures using the same source data. The Chinese report and its figures remain available. No new training or test evaluation was performed for the translation. The existing release PDF is the Chinese edition.
+This English edition translates the public Chinese report v1.1 and provides English versions of its five figures using the same source data. The Chinese report and its figures remain available. No new training or test evaluation was performed for the translation. The [release](https://github.com/jinglangqiu-hub/gcn-cora-reproduction/releases/tag/v0.1.0) provides separate English and Chinese PDFs.
 
 ## References and evidence notes
 
